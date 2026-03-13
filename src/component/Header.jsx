@@ -1,14 +1,29 @@
-const Header = () => {
-  return (
-    <div className="absolute top-5 left-10 z-20">
-      <img
-        className="w-36"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-        alt="Netflix Logo"
-      />
-      
-    </div>
-  )
-}
+import { useNavigate } from "react-router-dom";
 
-export default Header
+const Header = () => {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+  };
+
+  return (
+    <div className="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-4 z-50">
+
+      <h1 className="text-red-600 text-4xl font-bold">
+        NETFLIX
+      </h1>
+
+      <button
+        onClick={handleLogout}
+        className="bg-red-600 px-4 py-2 rounded text-white"
+      >
+        Logout
+      </button>
+
+    </div>
+  );
+};
+
+export default Header;

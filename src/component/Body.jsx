@@ -1,24 +1,19 @@
-import Login from "./Login"
+import Auth from "./Auth"
 import Browse from "./Browse"
-import Otp from "./Otp"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 const appRouter = createBrowserRouter([
   {
-    path: "/",
-    element: <Login/>
+    path:"/",
+    element:<Auth/>
   },
   {
-    path: "/otp",
-    element: <Otp/>
-  },
-  {
-    path: "/browse",
-    element: <Browse/>
+    path:"/browse",
+    element:<Browse/>
   }
 ])
 
-const Body = () => {
+const Body = ()=>{
   return <RouterProvider router={appRouter}/>
 }
 

@@ -1,5 +1,30 @@
-const Browse = () => {
-  return <h1>Browse Page</h1>
-}
+import Header from "./Header";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 
-export default Browse
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useTrendingMovies from "../hooks/useTrendingMovies";
+
+const Browse = () => {
+
+  useNowPlayingMovies();
+  usePopularMovies();
+  useTopRatedMovies();
+  useTrendingMovies();
+
+  return (
+    <div className="bg-black">
+
+      <Header />
+
+      <MainContainer />
+
+      <SecondaryContainer />
+
+    </div>
+  );
+};
+
+export default Browse;
